@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router";
+
 const VideoCard = ({ video }) => {
+  const navigate = useNavigate();
+
+  // Replace later with actual video ID and not the video URL
+  const onVideoClick = () => navigate(`/watch?v=${video.videoURL}`);
+
   return (
     <div
+      onClick={onVideoClick}
       key={video.id}
       className="cursor-pointer hover:bg-blue-100 p-4 rounded-lg transition duration-300 ease-in-out"
     >

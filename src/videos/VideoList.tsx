@@ -10,9 +10,10 @@ const videos = [
     timeAgo: "2 days ago",
     thumbnail: "https://i.ibb.co/JRw3MMys/dummy.png",
     imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
+    videoURL: "v1761028320/nvmex0bp3gx6kmrwmpdt.mp4",
     color: "Black",
   },
+
   {
     id: 2,
     title:
@@ -22,7 +23,7 @@ const videos = [
     timeAgo: "1 week ago",
     thumbnail: "https://i.ibb.co/JRw3MMys/dummy.png",
     imageAlt: "Front of men's Basic Tee in white.",
-    price: "$35",
+    videoURL: "v1761028320/nvmex0bp3gx6kmrwmpdt.mp4",
     color: "Aspen White",
   },
   {
@@ -34,7 +35,7 @@ const videos = [
     timeAgo: "2 weeks ago",
     thumbnail: "https://i.ibb.co/JRw3MMys/dummy.png",
     imageAlt: "Front of men's Basic Tee in dark gray.",
-    price: "$35",
+    videoURL: "v1761028320/nvmex0bp3gx6kmrwmpdt.mp4",
     color: "Charcoal",
   },
   {
@@ -46,7 +47,7 @@ const videos = [
     timeAgo: "2 days ago",
     thumbnail: "https://i.ibb.co/JRw3MMys/dummy.png",
     imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
+    videoURL: "v1761028320/nvmex0bp3gx6kmrwmpdt.mp4",
     color: "Black",
   },
   {
@@ -58,7 +59,7 @@ const videos = [
     timeAgo: "1 week ago",
     thumbnail: "https://i.ibb.co/JRw3MMys/dummy.png",
     imageAlt: "Front of men's Basic Tee in white.",
-    price: "$35",
+    videoURL: "v1761028320/nvmex0bp3gx6kmrwmpdt.mp4",
     color: "Aspen White",
   },
   {
@@ -70,7 +71,7 @@ const videos = [
     timeAgo: "2 weeks ago",
     thumbnail: "https://i.ibb.co/JRw3MMys/dummy.png",
     imageAlt: "Front of men's Basic Tee in dark gray.",
-    price: "$35",
+    videoURL: "v1761028320/nvmex0bp3gx6kmrwmpdt.mp4",
     color: "Charcoal",
   },
   {
@@ -83,7 +84,7 @@ const videos = [
     thumbnail: "https://i.ibb.co/JRw3MMys/dummy.png",
     imageAlt:
       "Front of men's Artwork Tee in peach with white and brown dots forming an isometric cube.",
-    price: "$35",
+    videoURL: "v1761028320/nvmex0bp3gx6kmrwmpdt.mp4",
     color: "Iso Dots",
   },
   {
@@ -96,7 +97,7 @@ const videos = [
     thumbnail: "https://i.ibb.co/JRw3MMys/dummy.png",
     imageAlt:
       "Front of men's Artwork Tee in peach with white and brown dots forming an isometric cube.",
-    price: "$35",
+    videoURL: "v1761028320/nvmex0bp3gx6kmrwmpdt.mp4",
     color: "Iso Dots",
   },
 ];

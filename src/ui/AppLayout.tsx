@@ -11,7 +11,7 @@ const AppLayout = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50">
       <Navbar onToggleSidebar={toggleSidebar} />
       <Sidebar isSidebarOpen={isSidebarOpen} onToggleSidebar={toggleSidebar} />
       <main>

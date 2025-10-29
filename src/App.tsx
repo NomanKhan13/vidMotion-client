@@ -3,7 +3,9 @@ import AppLayout from "./ui/AppLayout";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import VideoList from "./videos/VideoList";
-import VideoPlayer from "./videos/VideoPlayer";
+import VideoPlayer from "./videos/VideoPlayerPage";
+import ProfilePage from "./profile/ProfilePage";
+import EditProfile from "./profile/EditProfile";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +13,8 @@ const router = createBrowserRouter([
     Component: AppLayout,
     children: [
       { index: true, Component: VideoList },
-      { path: "videos/:id", Component: VideoPlayer },
+      { path: "watch", Component: VideoPlayer },
+      { path: "profile/:username", Component: ProfilePage },
     ],
   },
   {
@@ -21,6 +24,10 @@ const router = createBrowserRouter([
       { path: "login", Component: Login },
       { path: "register", Component: Register },
     ],
+  },
+  {
+    path: "/profile/edit",
+    Component: EditProfile,
   },
 ]);
 
