@@ -2,6 +2,7 @@ import { Video, ArrowLeft } from "lucide-react";
 import clsx from "clsx";
 import { useState } from "react";
 import Logo from "../ui/Logo";
+import InputField from "../ui/InputField";
 
 const EditProfile = () => {
   const [active, setActive] = useState("personal");
@@ -16,16 +17,22 @@ const EditProfile = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 bg-white shadow-sm">
-        <button className="flex items-center p-2 cursor-pointer gap-2 text-gray-600 hover:text-gray-900 transition">
-          <ArrowLeft size={18} />
-          <span className="text-sm font-medium">Back</span>
-        </button>
+      <header className="flex justify-between p-3 sm:px-6 shadow sticky top-0 bg-white z-50">
+        <div className="flex items-center gap-2">
+          <button
+            className="hover:bg-gray-100 transition rounded p-2 cursor-pointer flex gap-2 items-center justify-center"
+            // onClick={onToggleSidebar}
+          >
+            <ArrowLeft size={20} /> <span>Back</span>
+          </button>
+        </div>
         <Logo />
-        <button className="p-2 flex gap-2 cursor-pointer hover:bg-gray-100 rounded-full">
-          <Video className="text-gray-600" />
-          <span>Studio</span>
-        </button>
+
+        <div className="flex gap-2 self-center">
+          <button className="rounded border border-gray-200 hover:bg-gray-100 cursor-pointer transition p-2 flex gap-2 items-center justify-center">
+            <Video size={20} /> <span>Studio</span>
+          </button>
+        </div>
       </header>
 
       {/* Content */}
@@ -38,9 +45,9 @@ const EditProfile = () => {
                 key={item.id}
                 onClick={() => setActive(item.id)}
                 className={clsx(
-                  "p-3 rounded-md cursor-pointer text-sm transition-all",
+                  "p-3 rounded-md cursor-pointer text-sm transition-all font-medium",
                   active === item.id
-                    ? "bg-blue-50 text-blue-600 font-medium"
+                    ? "bg-blue-50 text-blue-600"
                     : "hover:bg-gray-100 text-gray-700"
                 )}
               >
@@ -59,27 +66,61 @@ const EditProfile = () => {
               </h2>
               <form className="space-y-4 max-w-lg">
                 <div>
-                  <label className="block text-sm text-gray-600 mb-1">
-                    Full Name
+                  <label className="block text-sm/6 font-medium text-gray-900 mb-2">
+                    Profile Picture
                   </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your name"
-                    className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  />
+                  <div className="flex flex-col items-start gap-4">
+                    <div className="w-20 h-20 rounded-full overflow-hidden border border-gray-300">
+                      <img
+                        src="https://robohash.org/nomads"
+                        alt="Profile"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <button className="px-4 py-2 rounded-md bg-white text-gray-900 border border-gray-300 transition">
+                      Change profile picture
+                    </button>
+                  </div>
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-600 mb-1">
-                    Bio
+                  <label className="block text-sm/6 font-medium text-gray-900 mb-2">
+                    Cover Picture
                   </label>
-                  <textarea
-                    rows="3"
-                    placeholder="Write a short bio..."
-                    className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  />
+                  <div className="flex flex-col items-start gap-4">
+                    <div className="aspect-16/5 rounded-lg overflow-hidden bg-gray-300 shadow-sm">
+                      <img
+                        src="https://yt3.googleusercontent.com/XIxKGKKfmAICREBGQGk2U8FQuIohh36FRPco_pGprmOu0d6gaT-9Q0l1h6onTpcqinL_goIZwAw=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
+                        alt="Channel cover"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <button className="px-4 py-2 rounded-md bg-white text-gray-900 border border-gray-300 transition">
+                      Change cover picture
+                    </button>
+                  </div>
                 </div>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
-                  Save Changes
+                <InputField
+                  label="Username"
+                  placeholder="johndoe123"
+                  type="text"
+                  dataFor="username"
+                  append="@"
+                />
+                <InputField
+                  label="Full Name"
+                  placeholder="John Doe"
+                  type="text"
+                  dataFor="fullName"
+                />
+                <InputField
+                  label="Bio"
+                  placeholder="Write a short bio..."
+                  type="textarea"
+                  dataFor="bio"
+                />
+
+                <button className="flex items-center gap-2 rounded-full bg-linear-to-r from-blue-600 to-blue-500 text-white font-semibold px-6 lg:px-8 py-2 lg:py-3 shadow-md shadow-blue-200 tracking-wide cursor-pointer hover:opacity-90 transition">
+                  Save changes
                 </button>
               </form>
             </section>

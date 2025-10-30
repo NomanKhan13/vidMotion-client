@@ -5,7 +5,7 @@ import Register from "./auth/Register";
 import VideoList from "./videos/VideoList";
 import VideoPlayer from "./videos/VideoPlayerPage";
 import ProfilePage from "./profile/ProfilePage";
-import EditProfile from "./profile/EditProfile";
+import Studio from "./studio/studio";
 
 const router = createBrowserRouter([
   {
@@ -26,8 +26,12 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/profile/edit",
-    Component: EditProfile,
+    path: "/studio",
+    children: [
+      { index: true, element: <Navigate to="channel-customization" replace /> },
+      { path: ":section", Component: Studio },
+      { path: "*", element: <Navigate to="channel-customization" replace /> },
+    ],
   },
 ]);
 

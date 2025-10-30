@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router";
+import { Link, useNavigate, useSearchParams } from "react-router";
 import SubButton from "../ui/SubButton";
 import Tabs from "./Tabs";
 
@@ -6,6 +6,7 @@ const ProfilePage = () => {
   // later fetch user data using username from params
   const [searchParams] = useSearchParams();
   const username = searchParams.get("username");
+  const navigate = useNavigate();
   const userData = {
     fullName: "John Doe",
     username: username || "johndoe",
@@ -49,9 +50,9 @@ const ProfilePage = () => {
           <p className="text-gray-700 text-sm sm:text-base mt-1 max-w-lg">
             {userData.bio}
           </p>
-          <SubButton onClick={() => console.log("Edit profile")}>
-            Edit Profile
-          </SubButton>
+          <Link to={`/profile/edit`}>
+            <SubButton>Edit Profile</SubButton>
+          </Link>
         </div>
       </div>
       <hr className="border-t border-gray-200 mt-8 mb-2" />
